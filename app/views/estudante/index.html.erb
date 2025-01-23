@@ -1,0 +1,11 @@
+<h2 style="text-align: center"> Informações do Estudante </h2>
+<hr>
+<% @estudantes.each do |estudante| %>
+    <div>
+        <details>
+            <summary><%= estudante[:nome] %></summary>
+            <p><%= estudante[:idade] %> anos</p>
+            <p><%= estudante[:curso] %></p>
+        </details>
+    </div>
+<%end%>
