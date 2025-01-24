@@ -19,3 +19,121 @@ Migrating to CreateProducts (20250124185958)
   [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7427160944457580725) /*application='Model'*/[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Arroz', '2025-01-24 19:58:31.368439', '2025-01-24 19:58:31.368439') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (21.4ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Feijão', '2025-01-24 19:59:32.112188', '2025-01-24 19:59:32.112188') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Óleo', '2025-01-24 20:01:09.326923', '2025-01-24 20:01:09.326923') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='Model'*/[0m
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT 1 OFFSET 1 /*application='Model'*/[0m
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT 1 OFFSET 2 /*application='Model'*/[0m
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 1 LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 3 LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 4 LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = 'Arroz' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = 'Feijão' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = 'Arroz' /* loading for pp */ LIMIT 11 /*application='Model'*/[0m
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ ORDER BY "products"."name" DESC LIMIT 11 /*application='Model'*/[0m
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ ORDER BY "products"."name" ASC LIMIT 11 /*application='Model'*/[0m
+  [1m[36mProduct Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" /*application='Model'*/[0m
+  [1m[36mProduct Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = 'Sal' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = 'Arroz' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Create (1.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Microondas', '2025-01-24 20:14:14.221897', '2025-01-24 20:14:14.221897') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Create (1.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Feijão', '2025-01-24 20:16:22.421421', '2025-01-24 20:16:22.421421') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (20.6ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = 'Feijão' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = 'Feijão' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK /*application='Model'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = 'Produto 1' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Produto 1', '2025-01-24 20:26:41.410930', '2025-01-24 20:26:41.410930') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = 'Produto 2' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Produto 2', '2025-01-24 20:26:41.417565', '2025-01-24 20:26:41.417565') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = 'Produto 3' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Produto 3', '2025-01-24 20:26:41.423836', '2025-01-24 20:26:41.423836') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = 'Produto 4' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Produto 4', '2025-01-24 20:26:41.429455', '2025-01-24 20:26:41.429455') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = 'Produto 5' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Produto 5', '2025-01-24 20:26:41.436954', '2025-01-24 20:26:41.436954') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = 'Produto 6' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Produto 6', '2025-01-24 20:26:41.443341', '2025-01-24 20:26:41.443341') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = 'Produto 7' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Create (0.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Produto 7', '2025-01-24 20:26:41.448974', '2025-01-24 20:26:41.448974') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = 'Produto 8' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Produto 8', '2025-01-24 20:26:41.468625', '2025-01-24 20:26:41.468625') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = 'Produto 9' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Produto 9', '2025-01-24 20:26:41.474806', '2025-01-24 20:26:41.474806') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = 'Produto 10' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Produto 10', '2025-01-24 20:26:41.481243', '2025-01-24 20:26:41.481243') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = 'Awesome Iron Car' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Awesome Iron Car', '2025-01-24 20:30:30.058548', '2025-01-24 20:30:30.058548') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = 'Gorgeous Paper Keyboard' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Gorgeous Paper Keyboard', '2025-01-24 20:30:30.068768', '2025-01-24 20:30:30.068768') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = 'Fantastic Leather Knife' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Fantastic Leather Knife', '2025-01-24 20:30:30.074386', '2025-01-24 20:30:30.074386') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = 'Fantastic Iron Knife' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Fantastic Iron Knife', '2025-01-24 20:30:30.080864', '2025-01-24 20:30:30.080864') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = 'Practical Iron Coat' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Practical Iron Coat', '2025-01-24 20:30:30.086342', '2025-01-24 20:30:30.086342') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = 'Practical Leather Wallet' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Practical Leather Wallet', '2025-01-24 20:30:30.091627', '2025-01-24 20:30:30.091627') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = 'Rustic Rubber Coat' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Rustic Rubber Coat', '2025-01-24 20:30:30.098015', '2025-01-24 20:30:30.098015') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = 'Heavy Duty Granite Computer' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Heavy Duty Granite Computer', '2025-01-24 20:30:30.103207', '2025-01-24 20:30:30.103207') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = 'Small Granite Bottle' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Small Granite Bottle', '2025-01-24 20:30:30.108078', '2025-01-24 20:30:30.108078') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Model'*/[0m
+  [1m[36mProduct Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = 'Fantastic Plastic Clock' LIMIT 1 /*application='Model'*/[0m
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Fantastic Plastic Clock', '2025-01-24 20:30:30.114186', '2025-01-24 20:30:30.114186') RETURNING "id" /*application='Model'*/[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT /*application='Model'*/[0m
