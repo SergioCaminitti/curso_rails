@@ -7,11 +7,14 @@ Rails.application.routes.draw do
   get "simple/hello", defaults: {format: "json"}
   get "simple2", to: "simple#hello", defaults: {format: "json"}
 
-  # No arquivo config/routes.rb, adicione rotas para as actions index e show.
-  # A rota para index deve ser configurada para a URL /tasks.
-  get "tasks", to: "tasks#index", defaults: {format: "json"}
+  get "tasks", to: "tasks#index"
+  get "tasks/:id" , to: "tasks#show"
 
-  # A rota para show deve ser configurada para a URL /tasks/:id
-  get "tasks/:id" , to: "tasks#show", defaults: {format: "json"}
-
+  resources :posts do
+    member do
+      get 'comments', to: 'posts#comments'
+      # get 'new_comment', to: 'posts#new_comment'
+      post 'create_comment', to: 'posts#create_comment'
+    end
+  end
 end
