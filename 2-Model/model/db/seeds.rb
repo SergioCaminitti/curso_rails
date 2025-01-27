@@ -20,5 +20,5 @@
 #     )
 # end
 #
-s1 = Student.create(name: "Sergio")
-t1 = Teacher.create(name: "Thiago")
+# s1 = Student.create(name: "Sergio")
+# t1 = Teacher.create(name: "Thiago")
