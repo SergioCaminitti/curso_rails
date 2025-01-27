@@ -17,4 +17,7 @@ Rails.application.routes.draw do
       post 'create_comment', to: 'posts#create_comment'
     end
   end
+
+  get "example/time_sensitive", to: "example#time_sensitive_action"
+
 end
