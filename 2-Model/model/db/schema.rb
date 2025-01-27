@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_27_142736) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_27_143744) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -18,6 +18,14 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_27_142736) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "biographs", force: :cascade do |t|
+    t.string "content"
+    t.bigint "author_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_biographs_on_author_id"
   end
 
   create_table "books", force: :cascade do |t|
@@ -34,5 +42,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_27_142736) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "biographs", "authors"
   add_foreign_key "books", "authors"
 end
