@@ -19,3 +19,6 @@
 #         name: Faker::Commerce.product_name
 #     )
 # end
+#
+s1 = Student.create(name: "Sergio")
+t1 = Teacher.create(name: "Thiago")
