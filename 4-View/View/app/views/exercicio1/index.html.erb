@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercício 1</title>
+    </head>
+    <body>
+        <h1>Cadastro de Usuários</h1>
+        <hr>
+        <ul>
+            <% @usuarios.each do |usuario| %>
+                <li>
+                    <%= usuario["nome"] %> - <%= usuario["email"] %> - <%= usuario["senha"] %>
+                </li>
+            <% end %>
+        </ul>
+        <h3>Adicionar Novo Usuário:</h3>
+        <%= form_tag({controller: "exercicio1", action: "adicionar_usuario"}, method: "post") do %>
+            <label for="nome">Nome:</label>
+            <%= text_field_tag "nome", nil, required: true %>
+
+            <label for="email">E-mail:</label>
+            <%= text_field_tag "email", nil, type: 'email', required: true, class: 'form-control' %>
+
+
+            <label for="senha">Senha:</label>
+            <%= text_field_tag "senha", nil, required: true %>
+
+            <%= submit_tag "Adcionar Usuário" %>
+        <% end %>
+    </body>
+</html>
