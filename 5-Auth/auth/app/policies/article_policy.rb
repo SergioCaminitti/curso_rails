@@ -6,6 +6,10 @@ class ArticlePolicy < ApplicationPolicy
     end
   end
 
+    def edit?
+      update?
+    end
+
     def update?
       # se é admin
       # user&.admin?
