@@ -6,23 +6,25 @@
         <title>ExemploView</title>
     </head>
     <body>
-        <h1>Produtos Disponíveis:</h1>
-        <hr>
-        <ul>
-            <% @produtos.each do |produto| %>
-                <li>
-                    <%= produto["nome"] %> - R$ <%= produto["preco"] %>
-                </li>
-            <% end %>
-        </ul>
-        <h3>Adicionar Novo Produto:</h3>
-        <%= form_tag({controller: "welcome", action: "adicionar_produto"}, method: "post") do %>
-            <label for="nome">Nome:</label>
-            <%= text_field_tag "nome", nil, required: true %>
+        <div class="container">
+            <h1>Produtos Disponíveis:</h1>
+            <hr>
+            <ul>
+                <% @produtos.each do |produto| %>
+                    <li>
+                        <%= produto["nome"] %> - <%= format_price(produto["preco"]) %>
+                    </li>
+                <% end %>
+            </ul>
+            <h3>Adicionar Novo Produto:</h3>
+            <%= form_tag({controller: "welcome", action: "adicionar_produto"}, method: "post") do %>
+                <label for="nome">Nome:</label>
+                <%= text_field_tag "nome", nil, required: true %>
 
-            <label for="preco">Preço:</label>
-            <%= text_field_tag "preco", nil, required: true %>
-            <%= submit_tag "Adcionar Produto" %>
-        <% end %>
+                <label for="preco">Preço:</label>
+                <%= text_field_tag "preco", nil, required: true %>
+                <%= submit_tag "Adcionar Produto" %>
+            <% end %>
+        </div>
     </body>
 </html>
