@@ -103,6 +103,14 @@ GEM
     erubi (1.13.1)
     et-orbi (1.2.11)
       tzinfo
+    ffi (1.17.1-aarch64-linux-gnu)
+    ffi (1.17.1-aarch64-linux-musl)
+    ffi (1.17.1-arm-linux-gnu)
+    ffi (1.17.1-arm-linux-musl)
+    ffi (1.17.1-x86_64-linux-gnu)
+    ffi (1.17.1-x86_64-linux-musl)
+    font-awesome-sass (6.7.2)
+      sassc (~> 2.0)
     fugit (1.11.1)
       et-orbi (~> 1, >= 1.2.11)
       raabro (~> 1.4)
@@ -110,6 +118,9 @@ GEM
       activesupport (>= 6.1)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
+    image_processing (1.13.0)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     importmap-rails (2.1.0)
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
@@ -145,6 +156,7 @@ GEM
       net-pop
       net-smtp
     marcel (1.0.4)
+    mini_magick (4.13.2)
     mini_mime (1.1.5)
     minitest (5.25.4)
     msgpack (1.7.5)
@@ -235,6 +247,10 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.2.1)
+    ransack (4.2.1)
+      activerecord (>= 6.1.5)
+      activesupport (>= 6.1.5)
+      i18n
     rdoc (6.11.0)
       psych (>= 4.0.0)
     regexp_parser (2.10.0)
@@ -272,6 +288,11 @@ GEM
       rubocop-performance
       rubocop-rails
     ruby-progressbar (1.13.0)
+    ruby-vips (2.2.2)
+      ffi (~> 1.12)
+      logger
+    sassc (2.4.0)
+      ffi (~> 1.9)
     securerandom (0.4.1)
     solid_cable (3.0.5)
       actioncable (>= 7.2)
@@ -347,6 +368,8 @@ DEPENDENCIES
   brakeman
   debug
   devise
+  font-awesome-sass
+  image_processing (~> 1.2)
   importmap-rails
   jbuilder
   kamal
@@ -354,6 +377,7 @@ DEPENDENCIES
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.1)
+  ransack (~> 4.2)
   rubocop-rails-omakase
   solid_cable
   solid_cache
