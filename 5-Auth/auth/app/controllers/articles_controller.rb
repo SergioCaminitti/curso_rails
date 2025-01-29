@@ -14,6 +14,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
+    authorize @article
   end
 
   # GET /articles/1/edit
@@ -25,6 +26,8 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.user = current_user
+    authorize @article
+
 
     respond_to do |format|
       if @article.save
