@@ -1069,3 +1069,383 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 13ms (Views: 3.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.3ms)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6617535630868360695) /*application='Blog'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Blog'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Blog'*/[0m
+Migrating to DeviseCreateUsers (20250129152103)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='Blog'*/[0m
+  [1m[35m (25.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Blog'*/[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email") /*application='Blog'*/[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token") /*application='Blog'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250129152103') RETURNING "version" /*application='Blog'*/[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT /*application='Blog'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(6617535630868360695) /*application='Blog'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Blog'*/[0m
+Started GET "/posts" for 127.0.0.1 at 2025-01-29 12:23:27 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Blog'*/[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (14.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 18.7ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 17.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_alert with {locale: [:en], formats: [:html], variants: [], handlers: [:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/sergiocaminitti/OneBitCode/rails/1-fundamentos_blog/blog/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/turbo-rails-2.0.11/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actiontext-8.0.1/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailbox-8.0.1/app/views"
+)
+Caused by: ActionView::MissingTemplate (Missing partial layouts/_alert with {locale: [:en], formats: [:html], variants: [], handlers: [:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/sergiocaminitti/OneBitCode/rails/1-fundamentos_blog/blog/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/turbo-rails-2.0.11/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actiontext-8.0.1/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailbox-8.0.1/app/views"
+)
+
+Information for: ActionView::Template::Error (Missing partial layouts/_alert with {locale: [:en], formats: [:html], variants: [], handlers: [:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/sergiocaminitti/OneBitCode/rails/1-fundamentos_blog/blog/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/turbo-rails-2.0.11/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actiontext-8.0.1/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailbox-8.0.1/app/views"
+):
+    17:   <body>
+    18:     <header>
+    19:     <%= render "layouts/navbar"%>
+    20:     <%= render "layouts/alert"%>
+    21:     </header>
+    22:     <main class="container">
+    23:       <%= yield %>
+  
+app/views/layouts/application.html.erb:20
+
+Information for cause: ActionView::MissingTemplate (Missing partial layouts/_alert with {locale: [:en], formats: [:html], variants: [], handlers: [:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/sergiocaminitti/OneBitCode/rails/1-fundamentos_blog/blog/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/turbo-rails-2.0.11/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actiontext-8.0.1/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailbox-8.0.1/app/views"
+):
+  
+app/views/layouts/application.html.erb:20
+Started GET "/users/sing_up" for 127.0.0.1 at 2025-01-29 12:24:11 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/sing_up"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-01-29 12:24:26 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/shared/_error_messages.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 10.2ms | GC: 0.9ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | GC: 1.5ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 5.6ms (0 queries, 0 cached) | GC: 2.1ms)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_alert with {locale: [:en], formats: [:html], variants: [], handlers: [:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/sergiocaminitti/OneBitCode/rails/1-fundamentos_blog/blog/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/turbo-rails-2.0.11/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actiontext-8.0.1/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailbox-8.0.1/app/views"
+)
+Caused by: ActionView::MissingTemplate (Missing partial layouts/_alert with {locale: [:en], formats: [:html], variants: [], handlers: [:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/sergiocaminitti/OneBitCode/rails/1-fundamentos_blog/blog/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/turbo-rails-2.0.11/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actiontext-8.0.1/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailbox-8.0.1/app/views"
+)
+
+Information for: ActionView::Template::Error (Missing partial layouts/_alert with {locale: [:en], formats: [:html], variants: [], handlers: [:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/sergiocaminitti/OneBitCode/rails/1-fundamentos_blog/blog/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/turbo-rails-2.0.11/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actiontext-8.0.1/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailbox-8.0.1/app/views"
+):
+    17:   <body>
+    18:     <header>
+    19:     <%= render "layouts/navbar"%>
+    20:     <%= render "layouts/alert"%>
+    21:     </header>
+    22:     <main class="container">
+    23:       <%= yield %>
+  
+app/views/layouts/application.html.erb:20
+
+Information for cause: ActionView::MissingTemplate (Missing partial layouts/_alert with {locale: [:en], formats: [:html], variants: [], handlers: [:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/sergiocaminitti/OneBitCode/rails/1-fundamentos_blog/blog/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/turbo-rails-2.0.11/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actiontext-8.0.1/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailbox-8.0.1/app/views"
+):
+  
+app/views/layouts/application.html.erb:20
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-01-29 12:24:48 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/shared/_error_messages.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 4.4ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | GC: 0.8ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 3.0ms (0 queries, 0 cached) | GC: 1.6ms)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_alers with {locale: [:en], formats: [:html], variants: [], handlers: [:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/sergiocaminitti/OneBitCode/rails/1-fundamentos_blog/blog/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/turbo-rails-2.0.11/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actiontext-8.0.1/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailbox-8.0.1/app/views"
+)
+Caused by: ActionView::MissingTemplate (Missing partial layouts/_alers with {locale: [:en], formats: [:html], variants: [], handlers: [:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/sergiocaminitti/OneBitCode/rails/1-fundamentos_blog/blog/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/turbo-rails-2.0.11/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actiontext-8.0.1/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailbox-8.0.1/app/views"
+)
+
+Information for: ActionView::Template::Error (Missing partial layouts/_alers with {locale: [:en], formats: [:html], variants: [], handlers: [:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/sergiocaminitti/OneBitCode/rails/1-fundamentos_blog/blog/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/turbo-rails-2.0.11/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actiontext-8.0.1/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailbox-8.0.1/app/views"
+):
+    17:   <body>
+    18:     <header>
+    19:       <%= render "layouts/navbar"%>
+    20:       <%= render "layouts/alers" %>
+    21:     </header>
+    22:     <main class="container">
+    23:       <%= yield %>
+  
+app/views/layouts/application.html.erb:20
+
+Information for cause: ActionView::MissingTemplate (Missing partial layouts/_alers with {locale: [:en], formats: [:html], variants: [], handlers: [:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/sergiocaminitti/OneBitCode/rails/1-fundamentos_blog/blog/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/turbo-rails-2.0.11/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actiontext-8.0.1/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailbox-8.0.1/app/views"
+):
+  
+app/views/layouts/application.html.erb:20
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-01-29 12:25:05 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/shared/_error_messages.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 3.6ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | GC: 2.6ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 2.4ms (0 queries, 0 cached) | GC: 3.2ms)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_alers with {locale: [:en], formats: [:html], variants: [], handlers: [:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/sergiocaminitti/OneBitCode/rails/1-fundamentos_blog/blog/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/turbo-rails-2.0.11/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actiontext-8.0.1/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailbox-8.0.1/app/views"
+)
+Caused by: ActionView::MissingTemplate (Missing partial layouts/_alers with {locale: [:en], formats: [:html], variants: [], handlers: [:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/sergiocaminitti/OneBitCode/rails/1-fundamentos_blog/blog/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/turbo-rails-2.0.11/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actiontext-8.0.1/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailbox-8.0.1/app/views"
+)
+
+Information for: ActionView::Template::Error (Missing partial layouts/_alers with {locale: [:en], formats: [:html], variants: [], handlers: [:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/sergiocaminitti/OneBitCode/rails/1-fundamentos_blog/blog/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/turbo-rails-2.0.11/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actiontext-8.0.1/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailbox-8.0.1/app/views"
+):
+    17:   <body>
+    18:     <header>
+    19:       <%= render "layouts/navbar"%>
+    20:       <%= render "layouts/alers" %>
+    21:     </header>
+    22:     <main class="container">
+    23:       <%= yield %>
+  
+app/views/layouts/application.html.erb:20
+
+Information for cause: ActionView::MissingTemplate (Missing partial layouts/_alers with {locale: [:en], formats: [:html], variants: [], handlers: [:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/sergiocaminitti/OneBitCode/rails/1-fundamentos_blog/blog/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/turbo-rails-2.0.11/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actiontext-8.0.1/app/views"
+  * "/home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailbox-8.0.1/app/views"
+):
+  
+app/views/layouts/application.html.erb:20
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-01-29 12:26:03 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/shared/_error_messages.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 6.1ms | GC: 0.6ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | GC: 0.6ms)
+Completed 200 OK in 25ms (Views: 10.2ms | ActiveRecord: 2.7ms (0 queries, 0 cached) | GC: 1.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2025-01-29 12:26:17 -0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"email" => "[FILTERED]", "password" => "[FILTERED]", "password_confirmation" => "[FILTERED]"}, "commit" => "Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='create',application='Blog',controller='registrations'*/[0m
+  [1m[36mUser Exists? (2.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'admin@egmail.com' LIMIT 1 /*action='create',application='Blog',controller='registrations'*/[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES ('admin@egmail.com', '$2a$12$7KJdXTkTqgTUFYbrupJfAOKmKsL2vYnitkPwK9JQqhijbYRaHLh4O', NULL, NULL, NULL, '2025-01-29 15:26:17.850056', '2025-01-29 15:26:17.850056') RETURNING "id" /*action='create',application='Blog',controller='registrations'*/[0m
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[35mCOMMIT /*action='create',application='Blog',controller='registrations'*/[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 259ms (ActiveRecord: 8.4ms (2 queries, 0 cached) | GC: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-29 12:26:17 -0300
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2025-01-29 12:26:20 -0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 4.3ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-01-29 12:26:40 -0300
+Processing by Devise::RegistrationsController#new as */*
+  Rendering layout layouts/application.html.erb
+  Rendering /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 2.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-29 12:26:47 -0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2025-01-29 12:26:49 -0300
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 5.9ms | GC: 0.0ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 7.3ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 8.6ms | ActiveRecord: 3.5ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-01-29 12:27:05 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | GC: 7.6ms)
+Completed 200 OK in 19ms (Views: 12.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 7.6ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2025-01-29 12:27:10 -0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"email" => "[FILTERED]", "password" => "[FILTERED]", "remember_me" => "0"}, "commit" => "Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@egmail.com' ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='Blog',controller='sessions'*/[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 251ms (ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-29 12:27:10 -0300
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | GC: 1.6ms)
+Completed 200 OK in 12ms (Views: 5.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.6ms)
+
+
