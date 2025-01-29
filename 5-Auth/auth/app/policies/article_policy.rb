@@ -19,10 +19,7 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def update?
-    # se é admin
-    # user&.admin?
-    # se é dono do artigo
-    user&.admin? || user&.id == record.user_id
+    user&.has_role? :editor || user&.id == record.user_id
   end
 
   def destroy?
