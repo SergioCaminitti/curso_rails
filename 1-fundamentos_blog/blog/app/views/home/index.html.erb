@@ -1,18 +1,5 @@
 <div class="container">
-    <h2 style="text-align: center"> Posts </h2>
-    <hr>
-    <h3>Admin: <%= @author %></h3>
-    <ul class="list-group">
-        <% @posts.each do |post| %>
-            <li class="list-group-item">
-                <p><%= post[:title] %> - <%= post[:body] %></p>
-            </li>
-        <%end%>
-    </ul>
-    <%
-=begin%>
- <%<a href="/home">Home</a>%> 
-    <%=link_to "Estudantes", estudantes_path%> 
-<%
-=end%>
+    <h1>Blog Pessoal</h1>
+    <p>Para conferir meus posts, clique no link a seguir:</p>
+    <%= link_to "Blog", posts_path, class: "btn btn-primary" %>
 </div>
