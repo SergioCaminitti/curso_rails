@@ -4,20 +4,28 @@
 # Expect: Usado para comparar o resultado esperado com o resultado obtido
 # Eq: Usado para comparar o resultado esperado com o resultado obtido
 
+
+#Before Hook
+# Ele serve para configurar um estado inicial
+# compartilhado entre os testes
+
 require 'models/game'
 
 RSpec.describe 'Game' do
+  before(:each) do
+    @game = Game.new('The Legend of Zelda: Breath of the Wild')
+  end
+
   context 'when dealing with PS5 games' do
     it 'should have a title' do
-      game = Game.new('Spider-Man: Miles Morales')
-      expect(game.title).to eq('Spider-Man: Miles Morales')
+      expect(@game.title).to eq('The Legend of Zelda: Breath of the Wild')
     end
     it 'shoul allow settings and updating the title' do
-      game2 = Game.new('Demon\'s Souls')
-      expect(game2.title).to eq('Demon\'s Souls')
+      @game.title = 'Demon\'s Souls'
+      expect(@game.title).to eq('Demon\'s Souls')
 
-      game3 = Game.new('Ratchet & Clank: Rift Apart')
-      expect(game3.title).to eq('Ratchet & Clank: Rift Apart')
+      @game.title = 'Ratchet & Clank: Rift Apart'
+      expect(@game.title).to eq('Ratchet & Clank: Rift Apart')
     end
   end
 end
