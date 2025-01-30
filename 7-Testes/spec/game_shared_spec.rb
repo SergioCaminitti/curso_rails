@@ -6,7 +6,7 @@ RSpec.shared_examples 'a PS5 game' do
   it 'should have a title' do
     expect(@game.title).to be_truthy
   end
-  it 'shoul allow settings and updating the title' do
+  it 'should allow settings and updating the title' do
     @game.title = 'Demon\'s Souls'
     expect(@game.title).to eq('Demon\'s Souls')
     @game.title = 'Ratchet & Clank: Rift Apart'
