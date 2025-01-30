@@ -9635,3 +9635,782 @@ Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms (0 queries, 0 c
 NoMethodError (undefined method 'type' for nil):
   
 app/controllers/search_controller.rb:4:in 'SearchController#index'
+Started GET "/" for ::1 at 2025-01-30 09:32:35 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Blog'*/[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+Importmap skipped missing path: controllers/comments_controller.js
+Importmap skipped missing path: controllers/comments_controller.js
+  Rendered user/_session.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | GC: 0.0ms)
+Completed 200 OK in 45ms (Views: 8.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2025-01-30 09:32:36 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2025-01-30 09:32:39 -0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered user/_session.html.erb (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 5.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2025-01-30 09:32:51 -0300
+Processing by SearchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.3ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 22.2ms (0 queries, 0 cached) | GC: 1.2ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1 class="text-center">
+    <%= pluralize(@posts.count, "result") %>
+</h1>
+
+<%= render "search/form" %>
+
+
+<div class"container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+              <th><%= sort_link(@query, :title, "Title", default_order: :asc)%></th>
+              <th><%= sort_link(@query, :body, "Content")%></th>
+            </tr>
+        </thead>
+        <tbody>
+          <% @posts.each do |post|%>
+            <tr>
+              <td><%= link_to post.title, post %></td>
+              <td><%= post.body.truncate_words(20) %></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+)
+Caused by: ActiveSupport::SyntaxErrorProxy (/home/sergiocaminitti/OneBitCode/rails/1-fundamentos_blog/blog/app/views/search/index.html.erb:27: syntax errors found
+  [2m25 | [m'.freeze;
+  [2m26 | [m@output_buffer.safe_append='<!-- END app/views/search/index.html.erb -->';@output_buffer
+[1;31m> [m[2m27 | [m          end
+  [2m   | [m             [1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+[1;31m> [m[2m28 | [m
+  [2m   | [m[1;31m^[m expected an `end` to close the `def` statement
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1 class="text-center">
+    <%= pluralize(@posts.count, "result") %>
+</h1>
+
+<%= render "search/form" %>
+
+
+<div class"container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+              <th><%= sort_link(@query, :title, "Title", default_order: :asc)%></th>
+              <th><%= sort_link(@query, :body, "Content")%></th>
+            </tr>
+        </thead>
+        <tbody>
+          <% @posts.each do |post|%>
+            <tr>
+              <td><%= link_to post.title, post %></td>
+              <td><%= post.body.truncate_words(20) %></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+):
+1:    <h1 class="text-center">
+2:        <%= pluralize(@posts.count, "result") %>
+3:    </h1>
+4:    
+5:    <%= render "search/form" %>
+6:    
+7:    
+8:    <div class"container">
+9:        <table class="table table-striped">
+10:            <thead>
+11:                <tr>
+12:                  <th><%= sort_link(@query, :title, "Title", default_order: :asc)%></th>
+13:                  <th><%= sort_link(@query, :body, "Content")%></th>
+14:                </tr>
+15:            </thead>
+16:            <tbody>
+17:              <% @posts.each do |post|%>
+18:                <tr>
+19:                  <td><%= link_to post.title, post %></td>
+20:                  <td><%= post.body.truncate_words(20) %></td>
+21:                </tr>
+22:            </tbody>
+23:        </table>
+24:    </div>
+  
+app/views/search/index.html.erb:27: syntax errors found
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/home/sergiocaminitti/OneBitCode/rails/1-fundamentos_blog/blog/app/views/search/index.html.erb:27: syntax errors found
+  [2m25 | [m'.freeze;
+  [2m26 | [m@output_buffer.safe_append='<!-- END app/views/search/index.html.erb -->';@output_buffer
+[1;31m> [m[2m27 | [m          end
+  [2m   | [m             [1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+[1;31m> [m[2m28 | [m
+  [2m   | [m[1;31m^[m expected an `end` to close the `def` statement
+):
+  
+app/views/search/index.html.erb:27: syntax errors found
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-01-30 09:32:52 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/search" for 127.0.0.1 at 2025-01-30 09:33:01 -0300
+Processing by SearchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  Rendered search/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1 class="text-center">
+    <%= pluralize(@posts.count, "result") %>
+</h1>
+
+<%= render "search/form" %>
+
+
+<div class"container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+              <th><%= sort_link(@query, :title, "Title", default_order: :asc)%></th>
+              <th><%= sort_link(@query, :body, "Content")%></th>
+            </tr>
+        </thead>
+        <tbody>
+          <% @posts.each do |post|%>
+            <tr>
+              <td><%= link_to post.title, post %></td>
+              <td><%= post.body.truncate_words(20) %></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+)
+Caused by: ActiveSupport::SyntaxErrorProxy (/home/sergiocaminitti/OneBitCode/rails/1-fundamentos_blog/blog/app/views/search/index.html.erb:27: syntax errors found
+  [2m25 | [m'.freeze;
+  [2m26 | [m@output_buffer.safe_append='<!-- END app/views/search/index.html.erb -->';@output_buffer
+[1;31m> [m[2m27 | [m          end
+  [2m   | [m             [1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+[1;31m> [m[2m28 | [m
+  [2m   | [m[1;31m^[m expected an `end` to close the `def` statement
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1 class="text-center">
+    <%= pluralize(@posts.count, "result") %>
+</h1>
+
+<%= render "search/form" %>
+
+
+<div class"container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+              <th><%= sort_link(@query, :title, "Title", default_order: :asc)%></th>
+              <th><%= sort_link(@query, :body, "Content")%></th>
+            </tr>
+        </thead>
+        <tbody>
+          <% @posts.each do |post|%>
+            <tr>
+              <td><%= link_to post.title, post %></td>
+              <td><%= post.body.truncate_words(20) %></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+):
+1:    <h1 class="text-center">
+2:        <%= pluralize(@posts.count, "result") %>
+3:    </h1>
+4:    
+5:    <%= render "search/form" %>
+6:    
+7:    
+8:    <div class"container">
+9:        <table class="table table-striped">
+10:            <thead>
+11:                <tr>
+12:                  <th><%= sort_link(@query, :title, "Title", default_order: :asc)%></th>
+13:                  <th><%= sort_link(@query, :body, "Content")%></th>
+14:                </tr>
+15:            </thead>
+16:            <tbody>
+17:              <% @posts.each do |post|%>
+18:                <tr>
+19:                  <td><%= link_to post.title, post %></td>
+20:                  <td><%= post.body.truncate_words(20) %></td>
+21:                </tr>
+22:            </tbody>
+23:        </table>
+24:    </div>
+  
+app/views/search/index.html.erb:27: syntax errors found
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/home/sergiocaminitti/OneBitCode/rails/1-fundamentos_blog/blog/app/views/search/index.html.erb:27: syntax errors found
+  [2m25 | [m'.freeze;
+  [2m26 | [m@output_buffer.safe_append='<!-- END app/views/search/index.html.erb -->';@output_buffer
+[1;31m> [m[2m27 | [m          end
+  [2m   | [m             [1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+[1;31m> [m[2m28 | [m
+  [2m   | [m[1;31m^[m expected an `end` to close the `def` statement
+):
+  
+app/views/search/index.html.erb:27: syntax errors found
+Started GET "/search" for 127.0.0.1 at 2025-01-30 09:34:29 -0300
+Processing by SearchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mPost Count (1.9ms)[0m  [1m[34mSELECT COUNT(DISTINCT "posts"."id") FROM "posts" /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:2
+  Rendered search/_form.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT DISTINCT "posts".* FROM "posts" /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:16
+  Rendered search/index.html.erb within layouts/application (Duration: 28.7ms | GC: 0.1ms)
+Importmap skipped missing path: controllers/comments_controller.js
+Importmap skipped missing path: controllers/comments_controller.js
+  Rendered user/_session.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 35.7ms | GC: 0.8ms)
+Completed 200 OK in 47ms (Views: 20.8ms | ActiveRecord: 16.2ms (2 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2025-01-30 09:34:40 -0300
+Processing by SearchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mPost Count (0.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "posts"."id") FROM "posts" /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:2
+  Rendered search/_form.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "posts".* FROM "posts" /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:16
+  Rendered search/index.html.erb within layouts/application (Duration: 13.0ms | GC: 0.0ms)
+Importmap skipped missing path: controllers/comments_controller.js
+Importmap skipped missing path: controllers/comments_controller.js
+  Rendered user/_session.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | GC: 0.0ms)
+Completed 200 OK in 26ms (Views: 12.5ms | ActiveRecord: 4.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/search?q%5Btitle_or_body_or_user_email_i_cont_any%5D=[FILTERED]&commit=Pesquisar" for 127.0.0.1 at 2025-01-30 09:34:58 -0300
+Processing by SearchController#index as HTML
+  Parameters: {"q" => {"title_or_body_or_user_email_i_cont_any" => "[FILTERED]"}, "commit" => "Pesquisar"}
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 9.2ms)
+
+
+  
+NoMethodError (undefined method 'type' for nil):
+  
+app/controllers/search_controller.rb:4:in 'SearchController#index'
+Started GET "/search" for 127.0.0.1 at 2025-01-30 09:44:25 -0300
+Processing by SearchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mPost Count (0.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "posts"."id") FROM "posts" /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:2
+  Rendered search/_form.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered search/index.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 18.3ms (1 query, 0 cached) | GC: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method 'user' for class Post)
+Caused by: NameError (undefined local variable or method 'user' for class Post)
+
+Information for: ActionView::Template::Error (undefined local variable or method 'user' for class Post):
+    1: <%= search_form_for(@query, url: search_path, method: :get, class:"d-flex") do |f| %>
+    2:     <%= f.search_field :title_or_body_or_user_email_i_cont_any,
+    3:         placeholder: "Search",
+    4:         class: "form-control me-2"
+    5:      %>
+  
+app/models/post.rb:11:in 'Post.ransackable_associations'
+app/views/search/_form.html.erb:2
+app/views/search/_form.html.erb:1
+app/views/search/index.html.erb:5
+
+Information for cause: NameError (undefined local variable or method 'user' for class Post):
+  
+app/models/post.rb:11:in 'Post.ransackable_associations'
+app/views/search/_form.html.erb:2
+app/views/search/_form.html.erb:1
+app/views/search/index.html.erb:5
+Started GET "/search" for 127.0.0.1 at 2025-01-30 09:44:32 -0300
+Processing by SearchController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mPost Count (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "posts"."id") FROM "posts" /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:2
+  Rendered search/_form.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT DISTINCT "posts".* FROM "posts" /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:16
+  Rendered search/index.html.erb within layouts/application (Duration: 11.5ms | GC: 0.6ms)
+Importmap skipped missing path: controllers/comments_controller.js
+Importmap skipped missing path: controllers/comments_controller.js
+  Rendered user/_session.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | GC: 1.7ms)
+Completed 200 OK in 33ms (Views: 17.1ms | ActiveRecord: 4.2ms (2 queries, 0 cached) | GC: 3.5ms)
+
+
+Started GET "/search?q%5Btitle_or_body_or_user_email_i_cont_any%5D=[FILTERED]&commit=Pesquisar" for 127.0.0.1 at 2025-01-30 09:44:34 -0300
+Processing by SearchController#index as HTML
+  Parameters: {"q" => {"title_or_body_or_user_email_i_cont_any" => "[FILTERED]"}, "commit" => "Pesquisar"}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+  
+NoMethodError (undefined method 'type' for nil):
+  
+app/controllers/search_controller.rb:4:in 'SearchController#index'
+Started GET "/search" for 127.0.0.1 at 2025-01-30 09:47:08 -0300
+Processing by SearchController#index as HTML
+Parâmetros recebidos: nil
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mPost Count (0.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "posts"."id") FROM "posts" /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:2
+  Rendered search/_form.html.erb (Duration: 1.3ms | GC: 0.6ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "posts".* FROM "posts" /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:16
+  Rendered search/index.html.erb within layouts/application (Duration: 8.9ms | GC: 0.6ms)
+Importmap skipped missing path: controllers/comments_controller.js
+Importmap skipped missing path: controllers/comments_controller.js
+  Rendered user/_session.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | GC: 1.5ms)
+Completed 200 OK in 31ms (Views: 14.9ms | ActiveRecord: 2.5ms (2 queries, 0 cached) | GC: 1.5ms)
+
+
+Started GET "/search?q%5Btitle_or_body_or_user_email_cont%5D=[FILTERED]&commit=Pesquisar" for 127.0.0.1 at 2025-01-30 09:47:10 -0300
+Processing by SearchController#index as HTML
+  Parameters: {"q" => {"title_or_body_or_user_email_cont" => "[FILTERED]"}, "commit" => "Pesquisar"}
+Parâmetros recebidos: #<ActionController::Parameters {"title_or_body_or_user_email_cont" => "Adm"} permitted: false>
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+NoMethodError (undefined method 'type' for nil):
+  
+app/controllers/search_controller.rb:5:in 'SearchController#index'
+Started GET "/search" for 127.0.0.1 at 2025-01-30 09:47:25 -0300
+Processing by SearchController#index as HTML
+Parâmetros recebidos: nil
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mPost Count (0.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "posts"."id") FROM "posts" /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:2
+  Rendered search/_form.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "posts".* FROM "posts" /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:16
+  Rendered search/index.html.erb within layouts/application (Duration: 4.4ms | GC: 0.0ms)
+  Rendered user/_session.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 5.1ms | ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2025-01-30 09:48:25 -0300
+Processing by SearchController#index as HTML
+Parâmetros recebidos: nil
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mPost Count (0.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "posts"."id") FROM "posts" /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:2
+  Rendered search/_form.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "posts".* FROM "posts" /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:16
+  Rendered search/index.html.erb within layouts/application (Duration: 8.4ms | GC: 0.5ms)
+Importmap skipped missing path: controllers/comments_controller.js
+Importmap skipped missing path: controllers/comments_controller.js
+  Rendered user/_session.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | GC: 1.5ms)
+Completed 200 OK in 30ms (Views: 15.0ms | ActiveRecord: 2.3ms (2 queries, 0 cached) | GC: 2.2ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-01-30 09:48:25 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/search?q%5Btitle_or_body_cont%5D=Adm&commit=Pesquisar" for 127.0.0.1 at 2025-01-30 09:48:27 -0300
+Processing by SearchController#index as HTML
+  Parameters: {"q" => {"title_or_body_cont" => "Adm"}, "commit" => "Pesquisar"}
+Parâmetros recebidos: #<ActionController::Parameters {"title_or_body_cont" => "Adm"} permitted: false>
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mPost Count (0.9ms)[0m  [1m[34mSELECT COUNT(DISTINCT "posts"."id") FROM "posts" WHERE ("posts"."title" ILIKE '%Adm%' OR "posts"."body" ILIKE '%Adm%') /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:2
+  Rendered search/_form.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT DISTINCT "posts".* FROM "posts" WHERE ("posts"."title" ILIKE '%Adm%' OR "posts"."body" ILIKE '%Adm%') /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:16
+  Rendered search/index.html.erb within layouts/application (Duration: 4.4ms | GC: 0.6ms)
+  Rendered user/_session.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.6ms)
+Completed 200 OK in 15ms (Views: 4.7ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/search?q%5Btitle_or_body_cont%5D=&commit=Pesquisar" for 127.0.0.1 at 2025-01-30 09:48:35 -0300
+Processing by SearchController#index as HTML
+  Parameters: {"q" => {"title_or_body_cont" => ""}, "commit" => "Pesquisar"}
+Parâmetros recebidos: #<ActionController::Parameters {"title_or_body_cont" => ""} permitted: false>
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mPost Count (0.4ms)[0m  [1m[34mSELECT COUNT(DISTINCT "posts"."id") FROM "posts" /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:2
+  Rendered search/_form.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "posts".* FROM "posts" /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:16
+  Rendered search/index.html.erb within layouts/application (Duration: 4.5ms | GC: 0.9ms)
+  Rendered user/_session.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | GC: 0.9ms)
+Completed 200 OK in 18ms (Views: 9.1ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/search?q%5Btitle_or_body_cont%5D=batat&commit=Pesquisar" for 127.0.0.1 at 2025-01-30 09:48:40 -0300
+Processing by SearchController#index as HTML
+  Parameters: {"q" => {"title_or_body_cont" => "batat"}, "commit" => "Pesquisar"}
+Parâmetros recebidos: #<ActionController::Parameters {"title_or_body_cont" => "batat"} permitted: false>
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mPost Count (0.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "posts"."id") FROM "posts" WHERE ("posts"."title" ILIKE '%batat%' OR "posts"."body" ILIKE '%batat%') /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:2
+  Rendered search/_form.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "posts".* FROM "posts" WHERE ("posts"."title" ILIKE '%batat%' OR "posts"."body" ILIKE '%batat%') /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:16
+  Rendered search/index.html.erb within layouts/application (Duration: 4.5ms | GC: 0.0ms)
+  Rendered user/_session.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 1.4ms)
+Completed 200 OK in 22ms (Views: 6.5ms | ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/search?q%5Btitle_or_body_cont%5D=&commit=Pesquisar" for 127.0.0.1 at 2025-01-30 09:48:44 -0300
+Processing by SearchController#index as HTML
+  Parameters: {"q" => {"title_or_body_cont" => ""}, "commit" => "Pesquisar"}
+Parâmetros recebidos: #<ActionController::Parameters {"title_or_body_cont" => ""} permitted: false>
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mPost Count (0.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "posts"."id") FROM "posts" /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:2
+  Rendered search/_form.html.erb (Duration: 1.2ms | GC: 0.8ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "posts".* FROM "posts" /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:16
+  Rendered search/index.html.erb within layouts/application (Duration: 4.0ms | GC: 0.8ms)
+  Rendered user/_session.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.8ms)
+Completed 200 OK in 14ms (Views: 4.9ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/search?commit=Pesquisar&q%5Bs%5D=title+asc&q%5Btitle_or_body_cont%5D=" for 127.0.0.1 at 2025-01-30 09:49:01 -0300
+Processing by SearchController#index as HTML
+  Parameters: {"commit" => "Pesquisar", "q" => {"s" => "title asc", "title_or_body_cont" => ""}}
+Parâmetros recebidos: #<ActionController::Parameters {"s" => "title asc", "title_or_body_cont" => ""} permitted: false>
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mPost Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT DISTINCT "posts".* FROM "posts") subquery_for_count /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:2
+  Rendered search/_form.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT DISTINCT "posts".* FROM "posts" ORDER BY "posts"."title" ASC /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:16
+  Rendered search/index.html.erb within layouts/application (Duration: 14.0ms | GC: 2.8ms)
+  Rendered user/_session.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | GC: 2.8ms)
+Completed 200 OK in 31ms (Views: 15.9ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 2.8ms)
+
+
+Started GET "/search?commit=Pesquisar&q%5Bs%5D=title+desc&q%5Btitle_or_body_cont%5D=" for 127.0.0.1 at 2025-01-30 09:49:02 -0300
+Processing by SearchController#index as HTML
+  Parameters: {"commit" => "Pesquisar", "q" => {"s" => "title desc", "title_or_body_cont" => ""}}
+Parâmetros recebidos: #<ActionController::Parameters {"s" => "title desc", "title_or_body_cont" => ""} permitted: false>
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mPost Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT DISTINCT "posts".* FROM "posts") subquery_for_count /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:2
+  Rendered search/_form.html.erb (Duration: 0.5ms | GC: 0.1ms)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "posts".* FROM "posts" ORDER BY "posts"."title" DESC /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:16
+  Rendered search/index.html.erb within layouts/application (Duration: 6.6ms | GC: 1.8ms)
+  Rendered user/_session.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 1.4ms | GC: 0.7ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | GC: 3.0ms)
+Completed 200 OK in 22ms (Views: 9.6ms | ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 3.3ms)
+
+
+Started GET "/search?commit=Pesquisar&q%5Bs%5D=title+asc&q%5Btitle_or_body_cont%5D=" for 127.0.0.1 at 2025-01-30 09:49:02 -0300
+Processing by SearchController#index as HTML
+  Parameters: {"commit" => "Pesquisar", "q" => {"s" => "title asc", "title_or_body_cont" => ""}}
+Parâmetros recebidos: #<ActionController::Parameters {"s" => "title asc", "title_or_body_cont" => ""} permitted: false>
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mPost Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT DISTINCT "posts".* FROM "posts") subquery_for_count /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:2
+  Rendered search/_form.html.erb (Duration: 1.6ms | GC: 0.6ms)
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT DISTINCT "posts".* FROM "posts" ORDER BY "posts"."title" ASC /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:16
+  Rendered search/index.html.erb within layouts/application (Duration: 14.2ms | GC: 4.3ms)
+  Rendered user/_session.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | GC: 6.4ms)
+Completed 200 OK in 34ms (Views: 18.3ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 6.4ms)
+
+
+Started GET "/search?commit=Pesquisar&q%5Bs%5D=body+asc&q%5Btitle_or_body_cont%5D=" for 127.0.0.1 at 2025-01-30 09:49:03 -0300
+Processing by SearchController#index as HTML
+  Parameters: {"commit" => "Pesquisar", "q" => {"s" => "body asc", "title_or_body_cont" => ""}}
+Parâmetros recebidos: #<ActionController::Parameters {"s" => "body asc", "title_or_body_cont" => ""} permitted: false>
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mPost Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT DISTINCT "posts".* FROM "posts") subquery_for_count /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:2
+  Rendered search/_form.html.erb (Duration: 1.7ms | GC: 0.9ms)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "posts".* FROM "posts" ORDER BY "posts"."body" ASC /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:16
+  Rendered search/index.html.erb within layouts/application (Duration: 9.1ms | GC: 3.0ms)
+  Rendered user/_session.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | GC: 3.8ms)
+Completed 200 OK in 22ms (Views: 10.9ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 4.6ms)
+
+
+Started GET "/search?commit=Pesquisar&q%5Bs%5D=body+desc&q%5Btitle_or_body_cont%5D=" for 127.0.0.1 at 2025-01-30 09:49:03 -0300
+Processing by SearchController#index as HTML
+  Parameters: {"commit" => "Pesquisar", "q" => {"s" => "body desc", "title_or_body_cont" => ""}}
+Parâmetros recebidos: #<ActionController::Parameters {"s" => "body desc", "title_or_body_cont" => ""} permitted: false>
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mPost Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT DISTINCT "posts".* FROM "posts") subquery_for_count /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:2
+  Rendered search/_form.html.erb (Duration: 1.2ms | GC: 0.6ms)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "posts".* FROM "posts" ORDER BY "posts"."body" DESC /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:16
+  Rendered search/index.html.erb within layouts/application (Duration: 9.7ms | GC: 4.4ms)
+  Rendered user/_session.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 1.6ms | GC: 0.4ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | GC: 5.7ms)
+Completed 200 OK in 27ms (Views: 14.3ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 6.1ms)
+
+
+Started GET "/search?commit=Pesquisar&q%5Bs%5D=body+asc&q%5Btitle_or_body_cont%5D=" for 127.0.0.1 at 2025-01-30 09:49:04 -0300
+Processing by SearchController#index as HTML
+  Parameters: {"commit" => "Pesquisar", "q" => {"s" => "body asc", "title_or_body_cont" => ""}}
+Parâmetros recebidos: #<ActionController::Parameters {"s" => "body asc", "title_or_body_cont" => ""} permitted: false>
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mPost Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT DISTINCT "posts".* FROM "posts") subquery_for_count /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:2
+  Rendered search/_form.html.erb (Duration: 2.6ms | GC: 0.9ms)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "posts".* FROM "posts" ORDER BY "posts"."body" ASC /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:16
+  Rendered search/index.html.erb within layouts/application (Duration: 11.3ms | GC: 4.3ms)
+  Rendered user/_session.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | GC: 4.9ms)
+Completed 200 OK in 25ms (Views: 13.2ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 6.3ms)
+
+
+Started GET "/search?commit=Pesquisar&q%5Bs%5D=body+desc&q%5Btitle_or_body_cont%5D=" for 127.0.0.1 at 2025-01-30 09:50:58 -0300
+Processing by SearchController#index as HTML
+  Parameters: {"commit" => "Pesquisar", "q" => {"s" => "body desc", "title_or_body_cont" => ""}}
+Parâmetros recebidos: #<ActionController::Parameters {"s" => "body desc", "title_or_body_cont" => ""} permitted: false>
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mPost Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT DISTINCT "posts".* FROM "posts") subquery_for_count /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:2
+  Rendered search/_form.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT DISTINCT "posts".* FROM "posts" ORDER BY "posts"."body" DESC /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:16
+  Rendered search/index.html.erb within layouts/application (Duration: 14.8ms | GC: 0.7ms)
+Importmap skipped missing path: controllers/comments_controller.js
+Importmap skipped missing path: controllers/comments_controller.js
+  Rendered search/_form.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered user/_session.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | GC: 1.1ms)
+Completed 200 OK in 32ms (Views: 15.3ms | ActiveRecord: 6.2ms (2 queries, 0 cached) | GC: 1.5ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-01-30 09:50:59 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-01-30 09:51:04 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/shared/_error_messages.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered /home/sergiocaminitti/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 9.7ms | GC: 0.0ms)
+  Rendered search/_form.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered user/_session.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 13.9ms | ActiveRecord: 2.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-01-30 09:51:06 -0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered search/_form.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered user/_session.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 2.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/inicio" for 127.0.0.1 at 2025-01-30 09:51:06 -0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered search/_form.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered user/_session.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/search?q%5Btitle_or_body_cont%5D=adm&commit=Pesquisar" for 127.0.0.1 at 2025-01-30 09:51:11 -0300
+Processing by SearchController#index as HTML
+  Parameters: {"q" => {"title_or_body_cont" => "adm"}, "commit" => "Pesquisar"}
+Parâmetros recebidos: #<ActionController::Parameters {"title_or_body_cont" => "adm"} permitted: false>
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mPost Count (0.4ms)[0m  [1m[34mSELECT COUNT(DISTINCT "posts"."id") FROM "posts" WHERE ("posts"."title" ILIKE '%adm%' OR "posts"."body" ILIKE '%adm%') /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:2
+  Rendered search/_form.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT DISTINCT "posts".* FROM "posts" WHERE ("posts"."title" ILIKE '%adm%' OR "posts"."body" ILIKE '%adm%') /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:16
+  Rendered search/index.html.erb within layouts/application (Duration: 4.5ms | GC: 0.0ms)
+  Rendered search/_form.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered user/_session.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 5.3ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/search?q%5Btitle_or_body_cont%5D=&commit=Pesquisar" for 127.0.0.1 at 2025-01-30 09:51:18 -0300
+Processing by SearchController#index as HTML
+  Parameters: {"q" => {"title_or_body_cont" => ""}, "commit" => "Pesquisar"}
+Parâmetros recebidos: #<ActionController::Parameters {"title_or_body_cont" => ""} permitted: false>
+  Rendering layout layouts/application.html.erb
+  Rendering search/index.html.erb within layouts/application
+  [1m[36mPost Count (0.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "posts"."id") FROM "posts" /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:2
+  Rendered search/_form.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "posts".* FROM "posts" /*action='index',application='Blog',controller='search'*/[0m
+  ↳ app/views/search/index.html.erb:16
+  Rendered search/index.html.erb within layouts/application (Duration: 7.1ms | GC: 0.0ms)
+  Rendered search/_form.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered user/_session.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 10.9ms | ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/inicio" for 127.0.0.1 at 2025-01-30 09:51:21 -0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered search/_form.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered user/_session.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 3.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2025-01-30 09:51:22 -0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/_post.html.erb:6
+  Rendered posts/_post.html.erb (Duration: 8.3ms | GC: 0.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='Blog',controller='posts'*/[0m
+  ↳ app/views/posts/_post.html.erb:6
+  Rendered posts/_post.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered posts/index.html.erb within layouts/application (Duration: 14.7ms | GC: 0.0ms)
+  Rendered search/_form.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered user/_session.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | GC: 0.0ms)
+Completed 200 OK in 26ms (Views: 15.0ms | ActiveRecord: 3.4ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/inicio" for 127.0.0.1 at 2025-01-30 09:51:23 -0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered search/_form.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered user/_session.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
