@@ -4,6 +4,14 @@
 # Expect: Usado para comparar o resultado esperado com o resultado obtido
 # Eq: Usado para comparar o resultado esperado com o resultado obtido
 
+class Game
+  attr_accessor :title
+
+  def initialize(title)
+    @title = title
+  end
+end
+
 RSpec.describe 'Game' do
   context 'when dealing with PS5 games' do
     it 'should have a title' do
