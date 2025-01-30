@@ -41,11 +41,11 @@ class Api::V1::AuthorsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_author
-      @author = Author.find(params.expect(:id))
+      @author = Author.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def author_params
-      params.expect(author: [ :name ])
+      params.require(:author).permit(:name)
     end
 end

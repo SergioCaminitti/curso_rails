@@ -16,7 +16,9 @@ class Api::V1::BooksController < ApplicationController
   # POST /books
   def create
     @book = Book.new(book_params)
-    @book.author = params[:author_id]
+    @book.author_id = params[:author_id]
+    # Adicionando o author_id fornecido
+    puts params[:author_id]
 
     if @book.save
       render json: @book, status: :created, location: api_v1_book_url(@book)
@@ -42,11 +44,11 @@ class Api::V1::BooksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_book
-      @book = Book.find(params.expect(:id))
+      @book = Book.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def book_params
-      params.expect(book: [ :title, :body ])
+      params.require(:book).permit(:title, :body)
     end
 end
