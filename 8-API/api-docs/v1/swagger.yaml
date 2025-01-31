@@ -1,0 +1,59 @@
+swagger: "2.0"
+info:
+  title: APIRails
+  version: "1.0"
+paths:
+  /api/v1/authors:
+    get:
+      summary: Retorna todos os autores
+      tags:
+        - Authors
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: Sucesso ao retornar os autores
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/Author"
+    post:
+      summary: Cria um novo autor
+      tags:
+        - Authors
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: author
+          description: Objeto do autor a ser criado
+          required: true
+          schema:
+            $ref: "#/definitions/AuthorInput"
+      responses:
+        "201":
+          description: Autor criado com sucesso
+          schema:
+            $ref: "#/definitions/Author"
+        "422":
+          description: Falha ao processar a solicitação
+          schema:
+            $ref: "#/definitions/Error"
+definitions:
+  Author:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+  AuthorInput:
+    type: object
+    properties:
+      name:
+        type: string
+  Error:
+    type: object
+    properties:
+      error:
+        type: string
